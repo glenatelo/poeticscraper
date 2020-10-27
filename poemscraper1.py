@@ -18,19 +18,15 @@ def getInformation(text):
     pprint(soup)
 # this part is crucial to web-scrapping the required information from the webpage
     try:
-        # obtain the poet's details
-        try:
-            poet = soup.find('div', {'class': 'poet-name'}.get('href'))
-        except:
-            pprint("The poet's details are unavailable at the moment.")
         # credits/copyright info about the poem
         try:
-            credits = soup.find('div', {'class': 'source-box bg-grey pa-boxed small-text'}.get('p')).text
+            credits = soup.find('div', {'class': 'source-box bg-grey pa-boxed small-text'}).text
         except:
             pprint("No credits found!")
         # audio recording of the poem
         try:
-            audio_recording = soup.find('div', {'class': 'pa-player'}.get('audiosrc'))
+            for audio_recording in soup.find('div'):
+                pprint(audio_recording.get('audiosrc'))
         except:
             pprint('Sorry. The audio recording is currently unavailable.')
         # textual recording of the poem
@@ -38,10 +34,16 @@ def getInformation(text):
             poem = soup.find('div', {'class': 'poem-content'}).text
         except:
             pprint('Sorry. The poem is currently unavailable.')
+        # genre types for this poem
+        try:
+            for meta_tags in soup.find('div', {'class': 'player-metas'}):
+                pprint(meta_tags.get('href'))
+        except:
+            pprint('Sorry. The glossary tags for this poem is currently unavailable.')
     except:
         pprint("Oh no! Something went wrong... You might have to add a '/' at the end of the poem and/or '-' between each word in the poem's name")
 
-# trying to retrieve another poem
+# trying to retrieve another poem called "Upstream" by Jean Binta Breeze
 word = 'upstream/'
 word = word.strip()
 getInformation(word)
