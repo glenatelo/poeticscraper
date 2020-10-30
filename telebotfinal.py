@@ -40,7 +40,7 @@ async def handle(msg):
             await bot.sendMessage(chat_id, "To watch the poets perform their poems 'live', please go to https://www.youtube.com/channel/UCQqniBioDz0kgzbDT9ddwKA")
 
         # map the message to the '/list' function
-    elif msg['text'] == '/devices':
+        elif msg['text'] == '/devices':
             await bot.sendMessage(chat_id, "Everyone can write their own poems! But first, you gotta learn the terms and devices: https://blog.prepscholar.com/poetic-devices-poetry-terms")
 
         # any other alphabetical input will be under this category (web scraping section)
