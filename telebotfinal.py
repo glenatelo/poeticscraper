@@ -22,24 +22,30 @@ async def handle(msg):
     pprint(msg)
     username = msg['chat']['first_name']
     if content_type == 'text':
+        
         # map the message to the '/start' function
         if msg['text'] == '/start':
             await bot.sendMessage(chat_id, "Hi! I am PoeticScraper and I am able to scrape your desired poem, its credits, the poet's information, and the poem's glossary tags. Key in '/help' for more assistance or any keywords without the '/' to get the ball rolling!")
+        
         # map the message to the '/help' function
         elif msg['text'] == '/help':
             await bot.sendMessage(chat_id, "I am here to help! For starters, you can type any keywords in and I will retrieve the most relevant poem for you! Alternatively, if you have specific poems you want to search, you can do so too! But please note that for poem titles with multiple words, please use '-' between them!")
+        
         # map the message to the '/more' function
         elif msg['text'] == '/more':
             await bot.sendMessage(chat_id, "Can't get enough of poems? Fret not! There are so many other poetry websites for you to browse: www.poetryfoundation.org & www.poets.org.")
+        
         # map the message to the '/video' function
         elif msg['text'] == '/video':
             await bot.sendMessage(chat_id, "To watch the poets perform their poems 'live', please go to https://www.youtube.com/channel/UCQqniBioDz0kgzbDT9ddwKA")
+        
         # any other alphabetical input will be under this category
         elif msg['text'] != '/start' or '/help' or '/more' or '/video':
             text = msg['text']
             # it's better to strip and lower the input in order for the subsequent function to comprehend it
             text = text.strip()
             await getInformation(text.lower())
+        
         # if all else fails...
         else:
             await bot.sendMessage(chat_id, "404 not found!")
