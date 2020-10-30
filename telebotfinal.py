@@ -8,7 +8,7 @@ from bs4 import BeautifulSoup
 import requests
 
 # Telegram bot API token (and its configuration to aysnc version)
-TOKEN = '<INSERT API TOKEN HERE>'
+TOKEN = '1267491393:AAFNB-ROxNSqHI91v1juIpK1moJ08yWlwS8'
 bot = telepot.aio.Bot(TOKEN)
 
 # This function will be modified to accommodate our web scraper code afterwards
@@ -19,33 +19,37 @@ async def handle(msg):
     content_type, chat_type, chat_id = telepot.glance(msg)
     # Log variables
     print(content_type, chat_type, chat_id)
+    # prettify the incoming message
     pprint(msg)
-    username = msg['chat']['first_name']
+
     if content_type == 'text':
-        
         # map the message to the '/start' function
         if msg['text'] == '/start':
             await bot.sendMessage(chat_id, "Hi! I am PoeticScraper and I am able to scrape your desired poem, its credits, the poet's information, and the poem's glossary tags. Key in '/help' for more assistance or any keywords without the '/' to get the ball rolling!")
-        
+
         # map the message to the '/help' function
         elif msg['text'] == '/help':
             await bot.sendMessage(chat_id, "I am here to help! For starters, you can type any keywords in and I will retrieve the most relevant poem for you! Alternatively, if you have specific poems you want to search, you can do so too! But please note that for poem titles with multiple words, please use '-' between them!")
-        
+
         # map the message to the '/more' function
         elif msg['text'] == '/more':
             await bot.sendMessage(chat_id, "Can't get enough of poems? Fret not! There are so many other poetry websites for you to browse: www.poetryfoundation.org & www.poets.org.")
-        
+
         # map the message to the '/video' function
         elif msg['text'] == '/video':
             await bot.sendMessage(chat_id, "To watch the poets perform their poems 'live', please go to https://www.youtube.com/channel/UCQqniBioDz0kgzbDT9ddwKA")
-        
-        # any other alphabetical input will be under this category
+
+        # map the message to the '/list' function
+    elif msg['text'] == '/devices':
+            await bot.sendMessage(chat_id, "Everyone can write their own poems! But first, you gotta learn the terms and devices: https://blog.prepscholar.com/poetic-devices-poetry-terms")
+
+        # any other alphabetical input will be under this category (web scraping section)
         elif msg['text'] != '/start' or '/help' or '/more' or '/video':
             text = msg['text']
             # it's better to strip and lower the input in order for the subsequent function to comprehend it
             text = text.strip()
             await getInformation(text.lower())
-        
+
         # if all else fails...
         else:
             await bot.sendMessage(chat_id, "404 not found!")
