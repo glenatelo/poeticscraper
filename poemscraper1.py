@@ -18,32 +18,48 @@ def getInformation(text):
     pprint(soup)
 # this part is crucial to web-scrapping the required information from the webpage
     try:
+        # poet's details
+        try:
+            poet = soup.select_one('.poet-name a')['href']
+            pprint(poet)
+        except:
+            pprint("Poet's details not found!")
+
         # credits/copyright info about the poem
         try:
             credits = soup.find('div', {'class': 'source-box bg-grey pa-boxed small-text'}).text
+            pprint(credits)
         except:
             pprint("No credits found!")
+
         # audio recording of the poem
         try:
-            for audio_recording in soup.find('div'):
-                pprint(audio_recording.get('audiosrc'))
+            audio = soup.select_one('.pa-player[audiosrc]')
+            message_link = 'Audio link not found'
+
+            if audio:
+                message_link = audio['audiosrc']
+                pprint(message_link)
         except:
             pprint('Sorry. The audio recording is currently unavailable.')
+
         # textual recording of the poem
         try:
             poem = soup.find('div', {'class': 'poem-content'}).text
+            pprint(poem)
         except:
             pprint('Sorry. The poem is currently unavailable.')
+
         # genre types for this poem
         try:
-            for meta_tags in soup.find('div', {'class': 'player-metas'}):
-                pprint(meta_tags.get('href'))
+            meta_tag = soup.select_one('.player-metas a')['href']
+            pprint(meta_tag)
         except:
             pprint('Sorry. The glossary tags for this poem is currently unavailable.')
     except:
         pprint("Oh no! Something went wrong... You might have to add a '/' at the end of the poem and/or '-' between each word in the poem's name")
 
-# trying to retrieve another poem called "Upstream" by Jean Binta Breeze
-word = 'upstream/'
+# trying to retrieve another poem
+word = 'upstream'
 word = word.strip()
 getInformation(word)
