@@ -5,7 +5,7 @@ The code(s) included in this repository:
 
 a) telegramtestbed.py - this piece of code is mainly used to test the functionality of the bot (when it is newly created by BotFather), such as sending/receiving messages from specific users. This code need not be used anymore once the bot's functionality is verified.
 
-b) bot1.py - this piece of code is important to handle the user requests in terms of retrieving the required information from the website, i.e. establishing the asynchronous input/output characteristics of the bot, the type of replies to be sent to the user, and how long the bot will run for.
+b) asynciobot.py - this piece of code is important to handle the user requests in terms of retrieving the required information from the website, i.e. establishing the asynchronous input/output characteristics of the bot, the type of replies to be sent to the user, and how long the bot will run for.
 
 c) webscraper.py - this piece of code is the 'heart of the telegram bot' as it contains the main functions required for the web-scraping to be executed by the telegram bot.
 
