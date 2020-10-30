@@ -8,7 +8,7 @@ from bs4 import BeautifulSoup
 import requests
 
 # Telegram bot API token (and its configuration to aysnc version)
-TOKEN = '1267491393:AAFNB-ROxNSqHI91v1juIpK1moJ08yWlwS8'
+TOKEN = '<INSERT API TOKEN HERE>'
 bot = telepot.aio.Bot(TOKEN)
 
 # This function will be modified to accommodate our web scraper code afterwards
