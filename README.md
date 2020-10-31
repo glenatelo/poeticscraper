@@ -11,4 +11,6 @@ c) webscraper.py - this piece of code is the 'heart of the telegram bot' as it c
 
 d) telebotfinal.py - this piece of code is the final product that houses all the lines of code required to run the telegram bot locally. It possesses functions that are defined to (i) map keywords to specific actions and (ii) specify the elements on the webpage that will be scraped by the bot. All of these are enabled by the aforementioned bot1.py code (that has been inserted into this piece of code).
 
-**The bot can be accessed by searching @PoeticScraper_bot on Telegram. However, do note that it can only run locally (on my laptop terminal) as of right now.**
+DISCLAIMER: The bot can be accessed by searching @PoeticScraper_bot on Telegram. However, do note that it can only run locally (on my laptop terminal) as of right now.
+
+**Note that scrapefm1.py, scrapefm2.py, and scrapefm3.py are codes that were produced for my initial project idea, and they do not have any bearing on the current Poetic Scraper bot.** 
