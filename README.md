@@ -13,4 +13,5 @@ d) telebotfinal.py - this piece of code is the final product that houses all the
 
 DISCLAIMER: The bot can be accessed by searching @PoeticScraper_bot on Telegram. However, do note that it can only run locally (on my laptop terminal) as of right now.
 
-**Note that scrapefm1.py, scrapefm2.py, and scrapefm3.py are codes that were produced for my initial project idea, and they do not have any bearing on the current Poetic Scraper bot.** 
+
+**Note that scrapefm1.py is the piece of code that I created for my initial project idea (SCRAPPED), and it does not have any bearing on the current Poetic Scraper bot.** 
