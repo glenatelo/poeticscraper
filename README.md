@@ -1,5 +1,5 @@
 # poeticscrapper
-All the resources used for the 'PoeticScrapper' Telegram bot. Please note that I used a laptop running Windows10 and I created, edited, and ran the subsequent codes via Atom (after I installed additional packages on it).
+All the resources used for the 'PoeticScrapper' Telegram bot. Please note that I used a laptop running Windows10 and I created, edited, and ran the subsequent codes via Atom (in which I installed additional packages on it).
 
 The code(s) included in this repository:
 
