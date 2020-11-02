@@ -1,8 +1,10 @@
-# import relevant libraries for web scraping and asynchronous input/output
+# import relevant libraries the asynchronous input/output and bot-building python framework
 import asyncio
 import telepot
 import telepot.aio
 from telepot.aio.loop import MessageLoop
+
+# import relevant libraries to execute the web scraping
 from pprint import pprint
 from bs4 import BeautifulSoup
 import requests
@@ -43,8 +45,12 @@ async def handle(msg):
         elif msg['text'] == '/devices':
             await bot.sendMessage(chat_id, "Everyone can write their own poems! But first, you gotta learn the terms and devices: https://blog.prepscholar.com/poetic-devices-poetry-terms")
 
+        # map the message to the '/data' function
+        elif msg['text'] == '/data':
+            await bot.sendMessage(chat_id, "I've also created a very basic data visualisation example using a Kaggle dataset and Tableau data visualisation software: https://public.tableau.com/views/Book1_16042958913660/Sheet1?:language=en&:display_count=y&:toolbar=n&:origin=viz_share_link")
+
         # any other alphabetical input will be under this category (web scraping section)
-        elif msg['text'] != '/start' or '/help' or '/more' or '/video':
+        elif msg['text'] != '/start' or '/help' or '/more' or '/video' or '/devices' or '/data':
             text = msg['text']
             # it's better to strip and lower the input in order for the subsequent function to comprehend it
             text = text.strip()
