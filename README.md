@@ -9,7 +9,7 @@ b) asynciobot.py - this piece of code is important to handle the user requests i
 
 c) webscraper.py - this piece of code is the 'heart of the telegram bot' as it contains the main functions required for the web-scraping to be executed by the telegram bot.
 
-d) telebotfinal.py - this piece of code is the final product that houses all the lines of code required to run the telegram bot locally. It possesses functions that are defined to (i) map keywords to specific actions and (ii) specify the elements on the webpage that will be scraped by the bot. All of these are enabled by the aforementioned bot1.py code (that has been inserted into this piece of code).
+d) poeticscrapperfinalcode.py - this piece of code is the final product that houses all the lines of code required to run the telegram bot locally. It possesses functions that are defined to (i) map keywords to specific actions and (ii) specify the elements on the webpage that will be scraped by the bot. All of these are enabled by the aforementioned bot1.py code (that has been inserted into this piece of code).
 
 DISCLAIMER: The bot can be accessed by searching @PoeticScraper_bot on Telegram. However, do note that it can only run locally (on my laptop terminal) as of right now.
 
